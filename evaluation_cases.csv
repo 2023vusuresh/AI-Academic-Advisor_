@@ -1,0 +1,31 @@
+case_id,category,question,expected_status,expected_outcome,verified_by
+1,Course ambiguity,What is the prerequisite for Communication Skills?,follow_up,Must list UCOR103 and UCOR107 and ask user to choose.,deterministic_source_router
+2,Course prerequisite,What is the prerequisite for UCOR205?,verified,Must state Nil/none recorded and provide source evidence.,deterministic_source_router
+3,Ambiguous credits,How many credits does Communication Skills carry?,follow_up,Must ask which Communication Skills course.,deterministic_source_router
+4,Course offering,When is UCOR205 offered?,verified,Must list source semesters and state this is not a future registration guarantee.,deterministic_source_router
+5,Ambiguous offering,When is Communication Skills offered?,follow_up,Must ask which course code/title match is intended.,deterministic_source_router
+6,Combined course facts,Tell me all information about UCOR203.,verified,"Must provide title, credits, prerequisite and available semester/category evidence.",deterministic_source_router
+7,Eligibility with student,Can SYN001 take UCOR205?,verified,Must evaluate the synthetic student against recorded prerequisites.,deterministic_source_router
+8,Eligibility missing student,Can I take UCOR205?,follow_up,Must request/select student context.,deterministic_source_router
+9,Minor list,What courses are in the Finance minor?,verified,Must retrieve Finance minor records from the minor workbook.,deterministic_source_router
+10,Semester list,What courses are offered in Semester 5?,verified,Must retrieve S5 records from the semester-spread workbook.,deterministic_source_router
+11,Structure category,What courses are in the Program Core of Struct_2025?,verified,Must retrieve Program Core records from Struct_2025.,deterministic_source_router
+12,Structure category,What courses are in the University Core of Struct_2026_DS?,verified,Must retrieve University Core records from Struct_2026_DS.,deterministic_source_router
+13,Graduation credits,What are the graduation credit requirements in Struct_2024?,verified,Must report the credit structure recorded in Struct_2024.,deterministic_source_router
+14,Missing structure,Can I graduate with 100 credits?,follow_up,Must ask for the applicable academic structure/batch.,deterministic_source_router
+15,Combined attributes,What is the prerequisite and credit for UCOR203?,verified,Must provide both prerequisite and credits.,deterministic_source_router
+16,Duplicate title,Which course is called Communication Skills?,follow_up,Must show multiple matching course codes and ask user to choose.,deterministic_source_router
+17,Course information,What information is available about Learning to Learn?,verified,Must retrieve available source information rather than invent missing policy.,deterministic_source_router
+18,Offering limitation,Is a listed semester offering a guarantee of registration?,verified,Must distinguish source listing from future registration guarantee.,deterministic_source_router
+19,Failed prerequisite,What happens if I failed a prerequisite?,verified,Must say the recorded prerequisite is treated as unsatisfied; no unsupported override rule.,deterministic_source_router
+20,Missing profile,Can I register without a student profile?,follow_up,Must request course and/or student context rather than invent a registration policy.,deterministic_source_router
+21,Unknown course,Tell me about a course that is not in the source data.,insufficient,Must state the requested information is not present in the supplied sources.,deterministic_source_router
+22,Structure foundation,Which courses are in the Foundation category of Struct_2022?,verified,Must retrieve Foundation course records from Struct_2022.,deterministic_source_router
+23,Structure electives,Which courses are in the Electives of Struct_2026_DS?,verified,Must retrieve Electives records from Struct_2026_DS.,deterministic_source_router
+24,Credit filter,Which courses have 3 credits?,verified,Must return records matching the 3-credit filter.,deterministic_source_router
+25,No prerequisite filter,Which courses have no prerequisite?,verified,Must return records whose prerequisite is blank/NIL/none in source data.,deterministic_source_router
+26,Missing semester,Show Finance minor courses in a specified semester.,follow_up,Must ask which semester rather than assuming one.,deterministic_source_router
+27,Cross-structure scope,What are the credit requirements across different structures?,follow_up,Must identify multiple structures and ask for a specific structure for detailed course/credit interpretation.,deterministic_source_router
+28,Conflict handling,What should I do if two source records disagree?,verified,Must explain that AIRA will not silently choose and will preserve source evidence.,deterministic_source_router
+29,Minor LTP fields,"What does the Finance minor record for lecture, tutorial and practical hours?",verified,Must retrieve L/T/P fields from the minor workbook.,deterministic_source_router
+30,Combined offering/category,Which semester and category contain UCOR205?,verified,Must return semester and category evidence for UCOR205.,deterministic_source_router
